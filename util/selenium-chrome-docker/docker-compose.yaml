@@ -1,0 +1,15 @@
+version: "3.6"
+services:
+  spider:
+    image: spider-dev
+    volumes:
+      - ./baidu_spider.py:/code/baidu_spider.py
+      - ./data:/data
+    command: python /code/baidu_spider.py
+    depends_on:
+      - chrome
+  chrome:
+    image: selenium/standalone-chrome:3.12.0-cobalt
+    ports:
+      - "4444:4444"
+    shm_size: 2g

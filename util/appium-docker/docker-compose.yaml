@@ -1,0 +1,17 @@
+version: "3.6"
+services:
+  spider:
+    image: spider-dev
+    volumes:
+      - ./appium_android.py:/code/appium_android.py
+    command: python /code/appium_android.py
+    depends_on:
+      - appium
+  appium:
+    image: appium/appium
+    ports:
+      - "4723:4723"
+    privileged: true
+    volumes:
+      - ~/.android:/root/.android
+      - /dev/bus/usb:/dev/bus/usb
