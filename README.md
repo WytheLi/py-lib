@@ -27,6 +27,12 @@ docker pull redis:alpine
     - 使用hash算法(md5, sha1, sha128...)，生成多个hash值
     - 使用一个hash算法，对需要处理的数据通过加盐处理，生成多个hash值
 
-
+### 持久化队列
+- 基于文件的队列
+    - [queuelib中的disk_queue](https://github.com/scrapy/queuelib)
+- 基于redis实现的queue
+    - [pyspider中的redis_queue](https://github.com/binux/pyspider/blob/master/pyspider/message_queue/redis_queue.py)
+    - 自己封装基于redis的FIFO、LIFO、Priority队列
+    
 
 
