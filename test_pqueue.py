@@ -3,7 +3,7 @@
 # @Author  : willi
 # @Email   : willi168@163.com
 # @Description:
-from lib.redis_queue.priority_redis_queue import PriorityRedisQueue
+from redis_queue.priority_redis_queue import PriorityRedisQueue
 
 pqueue = PriorityRedisQueue('pqueue', db=15, redis_lock_config={'lock_name': 'distributed_lock'})
 

@@ -6,7 +6,7 @@
 import pickle
 
 from .base import BaseRedisQueue
-from ..redis_lock.redis_lock import RedisLock
+from redis_lock.redis_lock import RedisLock
 
 
 class PriorityRedisQueue(BaseRedisQueue):

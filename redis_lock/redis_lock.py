@@ -25,7 +25,6 @@ class RedisLock(object):
         """
         if not thread_id:
             thread_id = socket.gethostname() + '-' + str(os.getpid()) + '-' + str(threading.current_thread().ident)
-        print(self.lock_name, thread_id)
         while block:
             # 存在值(设置失败)返回False， 否则返回True
             ret = self.redis.setnx(self.lock_name, thread_id)
