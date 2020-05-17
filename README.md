@@ -32,7 +32,19 @@ docker pull redis:alpine
     - [queuelib中的disk_queue](https://github.com/scrapy/queuelib)
 - 基于redis实现的queue
     - [pyspider中的redis_queue](https://github.com/binux/pyspider/blob/master/pyspider/message_queue/redis_queue.py)
-    - 自己封装基于redis的FIFO、LIFO、Priority队列
+    - 基于redis的FIFO、LIFO、Priority队列  
+    redis_queue  
+    |- \_\_init\_\_.py  
+    |- base.py  
+    |- fifo_redis_queue.py  
+    |- lifo_redis_queue.py  
+    |- priority_redis_queue.py  
     
+### redis分布式锁
+redis_lock  
+|- \_\_init\_\_.py  
+|- redis_lock.py
+
+
 
 

@@ -3,9 +3,9 @@
 # @Author  : willi
 # @Email   : willi168@163.com
 # @Description:
-from redis_queue.priority_redis_queue import PriorityRedisQueue
+from lib.redis_queue.priority_redis_queue import PriorityRedisQueue
 
-pqueue = PriorityRedisQueue('pqueue', db=15)
+pqueue = PriorityRedisQueue('pqueue', db=15, redis_lock_config={'lock_name': 'distributed_lock'})
 
-# pqueue.put((100, 'value1'))
-pqueue.get(block=False)
+print(pqueue.put((100, 'value3')))
+print(pqueue.get(block=False))
